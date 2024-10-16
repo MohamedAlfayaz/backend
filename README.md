@@ -7,3 +7,4 @@
 5. `git  commit -m "first commit"`
 6. `git branch -M main`
 7. `git push -u origin main` or `git push`
+8. `npm install nodemon`

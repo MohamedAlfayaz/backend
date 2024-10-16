@@ -1,4 +1,5 @@
 import express from "express";
+import movieRouters from "./routes/movies.routes.js"
 const app = express();
 const port = 3000;
 
@@ -6,19 +7,11 @@ app.get("/", (req, res) => {
   res.json({ msg: "Hello World!" });
 });
 
-//CURD funationality
-// R - For Reading
-app.get("/movies", () => {});
+// CURD funationality
+// CLIENT -> MIDDLEWARE -> SERVER
+app.use('/movies', movieRouters);
 
-// C - For Createing a Movies
-app.post("/movies", () => {});
-
-// U -  For Updating a Movies
-app.put("/movies/:id", () => {});
-
-// D - For Deleteing movies
-app.delete("/movies/:id", () => {});
 
 app.listen(port, () => {
-  console.log(`Example app listening on http://localhost:${port}`);
+  console.log(`The Server is running on http://localhost:${port}`);
 });
